@@ -85,35 +85,31 @@
     </header>
 
     <main>
-        <section class="hero">
-            <!-- Video background -->
-            <video class="hero-video" autoplay loop muted playsinline>
-                <source src="demos/compressed_nice_cooking_demo.mov" type="video/mp4">
-                <!-- Fallback for older browsers -->
-                Your browser does not support the video tag.
-            </video>
-            <!-- Overlay to improve text visibility -->
-            <div class="hero-overlay"></div>
+        <section class="hero" style="background-image: url('minecollab.png'); background-size: cover; background-position: center; position: relative;">
+            <!-- Removed video element -->
             
-            <div class="container">
-                <h1 class="paper-title">Collaborating Action by Action: <br/> A Multi-agent LLM Framework for Embodied Reasoning</h1>
-                <p class="authors">
-                    <a href="https://icwhite.github.io/website/">Isadora White</a><sup>1*</sup>, 
-                    <a href="https://sites.uci.edu/kolbynottingham/">Kolby Nottingham</a><sup>2*</sup>, 
-                    <a href="https://www.linkedin.com/in/ayush-maniar/?originalSubdomain=in">Ayush Maniar</a><sup>1</sup>, 
-                    <a href="https://www.youtube.com/c/EmergentGarden">Max Robinson</a><sup>3</sup>, 
-                    <br/>
-                    <a href="https://hlillemark.github.io/">Hansen Lillemark</a><sup>1</sup>, 
-                    <a href="https://mehulmaheshwari.com">Mehul Maheshwari</a><sup>1</sup>, 
-                    <a href="https://lianhui.ucsd.edu/">Lianhui Qin</a><sup>1</sup>, 
-                    <a href="https://prithvirajva.com/">Prithviraj Ammanabrolu</a><sup>1</sup>
-                </p>
-                <p class="institution"><sup>1</sup>UC San Diego, <sup>2</sup>Latitude Games, <sup>3</sup>Emergent Garden</p>
-                <div class="buttons">
-                    <a href="leaderboard.html" class="btn secondary-btn">View Leaderboard</a>
-                    <a href="demos.html" class="btn secondary-btn">See Task Demos</a>
-                    <a href="https://github.com/kolbytn/mindcraft" class="btn secondary-btn">Code</a>
-                    <a href="index.html" class="btn secondary-btn">Paper</a>
+            <!-- Semi-transparent container for text content -->
+            <div class="text-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); padding: 30px; border-radius: 8px; max-width: 90%; width: auto;">
+                <div class="container">
+                    <h1 class="paper-title" style="color: white;">Collaborating Action by Action: <br/> A Multi-agent LLM Framework for Embodied Reasoning</h1>
+                    <p class="authors" style="color: white;">
+                        <a href="https://icwhite.github.io/website/" style="color: #e0e0e0;">Isadora White</a><sup>1*</sup>, 
+                        <a href="https://sites.uci.edu/kolbynottingham/" style="color: #e0e0e0;">Kolby Nottingham</a><sup>2*</sup>, 
+                        <a href="https://www.linkedin.com/in/ayush-maniar/?originalSubdomain=in" style="color: #e0e0e0;">Ayush Maniar</a><sup>1</sup>, 
+                        <a href="https://www.youtube.com/c/EmergentGarden" style="color: #e0e0e0;">Max Robinson</a><sup>3</sup>, 
+                        <br/>
+                        <a href="https://hlillemark.github.io/" style="color: #e0e0e0;">Hansen Lillemark</a><sup>1</sup>, 
+                        <a href="https://mehulmaheshwari.com" style="color: #e0e0e0;">Mehul Maheshwari</a><sup>1</sup>, 
+                        <a href="https://lianhui.ucsd.edu/" style="color: #e0e0e0;">Lianhui Qin</a><sup>1</sup>, 
+                        <a href="https://prithvirajva.com/" style="color: #e0e0e0;">Prithviraj Ammanabrolu</a><sup>1</sup>
+                    </p>
+                    <p class="institution" style="color: white;"><sup>1</sup>UC San Diego, <sup>2</sup>Latitude Games, <sup>3</sup>Emergent Garden</p>
+                    <div class="buttons">
+                        <a href="leaderboard.html" class="btn secondary-btn">View Leaderboard</a>
+                        <a href="demos.html" class="btn secondary-btn">See Task Demos</a>
+                        <a href="https://github.com/kolbytn/mindcraft" class="btn secondary-btn">Code</a>
+                        <a href="index.html" class="btn secondary-btn">Paper</a>
+                    </div>
                 </div>
             </div>
         </section>
