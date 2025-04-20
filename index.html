@@ -93,30 +93,27 @@
     </header>
 
     <main>
-        <section class="hero" style="background-image: url('minecollab.png'); background-size: cover; background-position: center; position: relative;">
-            <!-- Removed video element -->
-            
+        <section class="hero" style="background-image: url('minecollab.png'); background-size: cover; background-position: center; position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
             <!-- Semi-transparent container for text content -->
-            <div class="text-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); padding: 30px; border-radius: 8px; max-width: 90%; width: auto;">
-                <div class="container">
-                    <h1 class="paper-title" style="color: white;">Collaborating Action by Action: <br/> A Multi-agent LLM Framework for Embodied Reasoning</h1>
-                    <p class="authors" style="color: white;">
+            <div class="text-container" style="background-color: rgba(0, 0, 0, 0.7); padding: 30px; border-radius: 8px; max-width: 90%; width: 90%; margin: 0 auto;">
+                <div class="container" style="width: 100%;">
+                    <h1 class="paper-title" style="color: white; font-size: clamp(1.5rem, 4vw, 2.5rem); text-align: center; word-wrap: break-word;">Collaborating Action by Action: <br class="d-none d-md-block"/> Multi-agent LLM Framework for Embodied Reasoning</h1>
+                    <p class="authors" style="color: white; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center; word-wrap: break-word;">
                         <a href="https://icwhite.github.io/website/" style="color: #e0e0e0;">Isadora White</a><sup>1*</sup>, 
                         <a href="https://sites.uci.edu/kolbynottingham/" style="color: #e0e0e0;">Kolby Nottingham</a><sup>2*</sup>, 
                         <a href="https://www.linkedin.com/in/ayush-maniar/?originalSubdomain=in" style="color: #e0e0e0;">Ayush Maniar</a><sup>1</sup>, 
                         <a href="https://www.youtube.com/c/EmergentGarden" style="color: #e0e0e0;">Max Robinson</a><sup>3</sup>, 
-                        <br/>
                         <a href="https://hlillemark.github.io/" style="color: #e0e0e0;">Hansen Lillemark</a><sup>1</sup>, 
                         <a href="https://mehulmaheshwari.com" style="color: #e0e0e0;">Mehul Maheshwari</a><sup>1</sup>, 
                         <a href="https://lianhui.ucsd.edu/" style="color: #e0e0e0;">Lianhui Qin</a><sup>1</sup>, 
                         <a href="https://prithvirajva.com/" style="color: #e0e0e0;">Prithviraj Ammanabrolu</a><sup>1</sup>
                     </p>
-                    <p class="institution" style="color: white;"><sup>1</sup>UC San Diego, <sup>2</sup>Latitude Games, <sup>3</sup>Emergent Garden</p>
-                    <div class="buttons">
-                        <a href="leaderboard.html" class="btn secondary-btn">View Leaderboard</a>
-                        <a href="demos.html" class="btn secondary-btn">See Task Demos</a>
-                        <a href="https://github.com/kolbytn/mindcraft" class="btn secondary-btn">Code</a>
-                        <a href="index.html" class="btn secondary-btn">Paper</a>
+                    <p class="institution" style="color: white; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center;"><sup>1</sup>UC San Diego, <sup>2</sup>Latitude Games, <sup>3</sup>Emergent Garden</p>
+                    <div class="buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
+                        <a href="leaderboard.html" class="btn secondary-btn" style="white-space: nowrap; padding: 8px 16px; background-color: #444; color: white; text-decoration: none; border-radius: 4px; font-size: clamp(0.8rem, 2vw, 1rem);">View Leaderboard</a>
+                        <a href="demos.html" class="btn secondary-btn" style="white-space: nowrap; padding: 8px 16px; background-color: #444; color: white; text-decoration: none; border-radius: 4px; font-size: clamp(0.8rem, 2vw, 1rem);">See Task Demos</a>
+                        <a href="https://github.com/kolbytn/mindcraft" class="btn secondary-btn" style="white-space: nowrap; padding: 8px 16px; background-color: #444; color: white; text-decoration: none; border-radius: 4px; font-size: clamp(0.8rem, 2vw, 1rem);">Code</a>
+                        <a href="index.html" class="btn secondary-btn" style="white-space: nowrap; padding: 8px 16px; background-color: #444; color: white; text-decoration: none; border-radius: 4px; font-size: clamp(0.8rem, 2vw, 1rem);">Paper</a>
                     </div>
                 </div>
             </div>
