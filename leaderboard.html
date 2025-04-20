@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - MineCollab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Collaborating Action by Action</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="demos.html">Demos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero small-hero">
+            <div class="container">
+                <h1>Leaderboard</h1>
+                <p>Compare performance across different methods and tasks</p>
+            </div>
+        </section>
+
+        <section class="leaderboard-section">
+            <div class="container">
+                <h2>Overall Performance</h2>
+                <p> Cooking and crafting scores are calculated as the average success rate and 
+                    the construction task score is calculated as the average edit distance 
+                    between the placed blocks and the true blueprint. The total score is the 
+                    average score for each model across each task. </p>
+                <div class="sorting-controls">
+                    <span>Sort by: </span>
+                    <button onclick="sortTable('overall')" class="sort-btn active">Overall Score</button>
+                    <button onclick="sortTable('cooking')" class="sort-btn">Cooking</button>
+                    <button onclick="sortTable('crafting')" class="sort-btn">Crafting</button>
+                    <button onclick="sortTable('construction')" class="sort-btn">Construction</button>
+                </div>
+                <div class="table-container">
+                    <table id="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>Score</th>
+                                <th>Cooking</th>
+                                <th>Crafting</th>
+                                <th>Construction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rank">1</td>
+                                <td>Claude-3.5-Sonnet</td>
+                                <td data-value="0.49">0.49</td>
+                                <td data-value="0.63">0.63</td>
+                                <td data-value="0.47">0.47</td>
+                                <td data-value="0.36">0.36</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">2</td>
+                                <td>GPT-4o</td>
+                                <td data-value="0.29">0.29</td>
+                                <td data-value="0.4">0.4</td>
+                                <td data-value="0.17">0.17</td>
+                                <td data-value="0.31">0.31</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">3</td>
+                                <td>LLaMa-70B</td>
+                                <td data-value="0.24">0.24</td>
+                                <td data-value="0.36">0.63</td>
+                                <td data-value="0.16">0.16</td>
+                                <td data-value="0.19">0.19</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">4</td>
+                                <td>LLaMa-8B-SFT</td>
+                                <td data-value="0.23">0.23</td>
+                                <td data-value="0.21">0.21</td>
+                                <td data-value="0.28">0.28</td>
+                                <td data-value="0.2">0.2</td>
+                            </tr>
+                            <tr>
+                                <td class="rank">4</td>
+                                <td>LLaMa-8B</td>
+                                <td data-value="0.01">0.01</td>
+                                <td data-value="0.02">0.02</td>
+                                <td data-value="0.0">0.0</td>
+                                <td data-value="0.0">0.0</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <style>
+                .sorting-controls {
+                    margin-bottom: 15px;
+                }
+                .sort-btn {
+                    padding: 6px 12px;
+                    margin-right: 5px;
+                    cursor: pointer;
+                    border: 1px solid #ddd;
+                    background: #f5f5f5;
+                    border-radius: 4px;
+                }
+                .sort-btn.active {
+                    background: #007bff;
+                    color: white;
+                    border-color: #0069d9;
+                }
+            </style>
+        
+            <script>
+                function sortTable(criterion) {
+                    // Update active button
+                    document.querySelectorAll('.sort-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    event.target.classList.add('active');
+                    
+                    const table = document.getElementById('leaderboard-table');
+                    const tbody = table.querySelector('tbody');
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    
+                    // Map criterion to column index
+                    const criterionMap = {
+                        'overall': 2,
+                        'cooking': 3,
+                        'crafting': 4,
+                        'construction': 5
+                    };
+                    
+                    const columnIndex = criterionMap[criterion];
+                    
+                    // Sort rows based on the selected criterion
+                    rows.sort((a, b) => {
+                        const aValue = parseFloat(a.cells[columnIndex].getAttribute('data-value'));
+                        const bValue = parseFloat(b.cells[columnIndex].getAttribute('data-value'));
+                        return bValue - aValue; // Descending order
+                    });
+                    
+                    // Update rank numbers and rebuild table
+                    rows.forEach((row, index) => {
+                        row.querySelector('.rank').textContent = index + 1;
+                        tbody.appendChild(row);
+                    });
+                }
+                
+                // Initialize with overall sorting
+                document.addEventListener('DOMContentLoaded', function() {
+                    // No need to call sortTable here since the initial HTML already has the correct order
+                });
+            </script>
+        </section>
+
+        <section class="cta-buttons">
+            <div class="container">
+                <div class="buttons">
+                    <a href="demos.html" class="btn primary-btn">See Task Demos</a>
+                    <a href="index.html" class="btn secondary-btn">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Your Name/Organization. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
